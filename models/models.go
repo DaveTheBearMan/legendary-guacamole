@@ -1,5 +1,10 @@
 package models
 
+type Auth struct {
+	username string
+	password string
+}
+
 type Connection struct {
 	service        string
 	lifetime       int
