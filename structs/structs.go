@@ -1,9 +1,9 @@
 package models
 
 type Connection struct {
-	port     int
-	service  string
-	lifetime int
+	service        string
+	lifetime       int
+	source_address int
 }
 
 type Network struct {
@@ -12,10 +12,29 @@ type Network struct {
 	connections []Connection
 }
 
-type Factory struct {
-	network Network
+type Service struct {
+	name string
+	port int
 }
 
+// Attacks
 
+// Defense
+type Firewall struct {
+	level int
+}
 
+// Progression
+type Progress struct {
+	power     int
+	resources int
+	money     int
+}
 
+// Main factory
+type Factory struct {
+	network  Network
+	firewall Firewall
+	services []Service
+	progress Progress
+}
